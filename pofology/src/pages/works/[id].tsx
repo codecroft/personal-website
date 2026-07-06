@@ -4,6 +4,8 @@ import { Work } from '@/types';
 import { GetServerSideProps } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { FiArrowLeft } from 'react-icons/fi';
 import Slider, { Settings } from 'react-slick';
 
 const settings: Settings = {
@@ -57,6 +59,7 @@ type Props = {
 };
 
 const WorkDetail: React.FunctionComponent<Props> = ({ work }) => {
+  const router = useRouter();
   const videoId = getYoutubeVideoId(work.previewUrl);
   const isWinXpEmbedded = work.title === 'Windows XP Embedded Security Application';
   const hideLivePreview = HIDE_PREVIEW_TITLES.has(work.title);
@@ -65,7 +68,14 @@ const WorkDetail: React.FunctionComponent<Props> = ({ work }) => {
   return (
     <AppLayout title="Work Detail">
       <div className="container">
-        <div className="mt-24 flex flex-col items-center justify-center">
+        <button
+          onClick={() => router.back()}
+          className="mt-8 flex items-center gap-2 text-gray-400 transition-colors duration-150 hover:text-primary-500"
+        >
+          <FiArrowLeft />
+          Back
+        </button>
+        <div className="mt-8 flex flex-col items-center justify-center">
           <h1 className="text-center text-2xl font-semibold sm:text-3xl md:text-4xl">{work.title}</h1>
           <p className="mt-4 flex items-center text-gray-400">
             {displayYear && <span className="mr-2">{displayYear}</span>}
