@@ -3,7 +3,6 @@ import Image from 'next/image';
 import React from 'react';
 import SectionTitle from '@/components/shared/SectionTitle';
 import { services } from '@/data/services';
-import Link from 'next/link';
 
 const bgClasses = [
   'bg-indigo-500 text-indigo-100',
@@ -37,12 +36,6 @@ const ServiceSection = () => {
           </div>
         ))}
       </div>
-      <p className="mt-8 text-center">
-        Looking for a custom service?{' '}
-        <Link href="/contact">
-          <a>Click here to contact me! &#128079;</a>
-        </Link>
-      </p>
     </>
   );
 };

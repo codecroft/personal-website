@@ -17,10 +17,12 @@ const HeroSection = () => {
         </div>
         <h1 className="mt-4 text-3xl font-bold ">Nima Rikhtegar</h1>
         <div className="mt-2 flex gap-1">
-          {' '}
-          I'm a{' '}
           <Typed
-            strings={['Game Developer', 'Backend Developer', 'Mobile Developer']}
+            strings={[
+              "I'm a Software Engineer",
+              "I'm an AI-Augmented Engineer",
+              "I'm a Builder",
+            ]}
             typeSpeed={60}
             backSpeed={30}
             loop
@@ -43,7 +45,7 @@ const HeroSection = () => {
             </a>
           </Link>
         </div>
-        <Button className="mt-5 px-8">Hire Me</Button>
+        <Button href="/contact" className="mt-5 px-8">Contact Me</Button>
       </div>
 
       <div className="absolute bottom-0 flex flex-col items-center ">

@@ -32,10 +32,23 @@ export type Work = {
   previewUrl: string;
   publishedAt: string;
   featureList: string[];
+  subProjects?: {
+    name: string;
+    summary: string;
+    featureList: string[];
+  }[];
   attributes: {
     name: string;
     value: string | number;
   }[];
+};
+
+export type Certification = {
+  name: string;
+  issuer: string;
+  image: string;
+  completedAt: string;
+  credentialUrl: string;
 };
 
 export type Post = {

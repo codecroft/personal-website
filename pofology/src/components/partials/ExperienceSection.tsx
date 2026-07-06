@@ -2,11 +2,17 @@ import { educations } from '@/data/educations';
 import { experiences } from '@/data/experiences';
 import styles from '@/styles/modules/ExperienceSection.module.scss';
 import classNames from 'classnames';
+import { useState } from 'react';
 import { FiBriefcase } from 'react-icons/fi';
 import AcademicCap from '@/components/icons/AcademicCap';
 import SectionTitle from '@/components/shared/SectionTitle';
 
+const EXPERIENCE_PREVIEW_COUNT = 4;
+
 const ExperienceSection = () => {
+  const [showAllExperiences, setShowAllExperiences] = useState(false);
+  const visibleExperiences = showAllExperiences ? experiences : experiences.slice(0, EXPERIENCE_PREVIEW_COUNT);
+
   return (
     <>
       <SectionTitle>Experiences & Educations</SectionTitle>
@@ -15,7 +21,7 @@ const ExperienceSection = () => {
         <div>
           <div className="rounded-2xl bg-white px-10 py-8 shadow-lg dark:bg-gray-700">
             <ol className={classNames(styles['experience'], 'border-l border-gray-200 dark:border-gray-500')}>
-              {experiences.map((experience, index) => (
+              {visibleExperiences.map((experience, index) => (
                 <li key={index} className={styles['experience-item']}>
                   <span className="absolute -left-2.5 flex h-5 w-5 items-center justify-center rounded-full bg-white text-primary-500 ring-8 ring-white dark:bg-gray-700 dark:ring-gray-700">
                     <FiBriefcase className="h-5" />
@@ -35,6 +41,13 @@ const ExperienceSection = () => {
                 </li>
               ))}
             </ol>
+            {experiences.length > EXPERIENCE_PREVIEW_COUNT && (
+              <div className="mt-2 flex justify-center">
+                <button type="button" className="btn" onClick={() => setShowAllExperiences((prev) => !prev)}>
+                  {showAllExperiences ? 'Show Less' : 'View All'}
+                </button>
+              </div>
+            )}
           </div>
         </div>
         {/* Education */}
