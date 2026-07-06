@@ -7,9 +7,11 @@ interface Props {
   className?: string;
   children: React.ReactNode;
   href?: string;
+  onClick?: () => void;
+  disabled?: boolean;
 }
 
-const Button: React.FC<Props> = ({ type = 'submit', children, className, href }) => {
+const Button: React.FC<Props> = ({ type = 'submit', children, className, href, onClick, disabled }) => {
   if (href) {
     return (
       <Link href={href}>
@@ -18,7 +20,7 @@ const Button: React.FC<Props> = ({ type = 'submit', children, className, href })
     );
   }
   return (
-    <button type={type} className={classNames(['btn', className])}>
+    <button type={type} className={classNames(['btn', className])} onClick={onClick} disabled={disabled}>
       {children}
     </button>
   );
