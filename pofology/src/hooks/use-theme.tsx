@@ -17,7 +17,7 @@ type ThemeProviderProps = {
 const ThemeContext = React.createContext<ThemeContextType | undefined>(undefined);
 
 const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
-  const [theme, setTheme] = React.useState<Theme>(Theme.LIGHT);
+  const [theme, setTheme] = React.useState<Theme>(Theme.DARK);
 
   const toggleTheme = () => {
     if (theme === Theme.LIGHT) {
@@ -32,16 +32,13 @@ const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   };
 
   useEffect(() => {
-    const localTheme = localStorage.getItem('theme');
-    if (localTheme) {
-      setTheme(localTheme as Theme);
-      if (localTheme === Theme.DARK) {
-        document.documentElement.classList.add(Theme.DARK);
-      }
+    const localTheme = (localStorage.getItem('theme') as Theme) || Theme.DARK;
+    setTheme(localTheme);
+    if (localTheme === Theme.DARK) {
+      document.documentElement.classList.add(Theme.DARK);
+    } else {
+      document.documentElement.classList.remove(Theme.DARK);
     }
-    return () => {
-      setTheme(Theme.LIGHT);
-    };
   }, []);
 
   return <ThemeContext.Provider value={{ theme, toggleTheme }}>{children}</ThemeContext.Provider>;
