@@ -342,7 +342,7 @@ export const works: Work[] = [
     featureList: [
       'Contributed as a programmer on the campaign team for a AAA real-time strategy franchise',
       'Optimized gameplay systems within the proprietary Essence Engine (C++, VTune, Profiler)',
-      "Implemented the engine's Save/Load system",
+      `Implemented the engine's Save/Load system`,
       'Built automated gameplay testing frameworks with the DevOps team',
       'Facilitated engine workshops for gameplay designers',
     ],

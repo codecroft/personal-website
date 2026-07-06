@@ -18,11 +18,7 @@ const HeroSection = () => {
         <h1 className="mt-4 text-3xl font-bold ">Nima Rikhtegar</h1>
         <div className="mt-2 flex gap-1">
           <Typed
-            strings={[
-              "I'm a Software Engineer",
-              "I'm an AI-Augmented Engineer",
-              "I'm a Builder",
-            ]}
+            strings={[`I'm a Software Engineer`, `I'm an AI-Augmented Engineer`, `I'm a Builder`]}
             typeSpeed={60}
             backSpeed={30}
             loop
@@ -34,7 +30,7 @@ const HeroSection = () => {
               <FiInstagram size={25} />
             </a>
           </Link>
-<Link href="https://github.com/codecroft">
+          <Link href="https://github.com/codecroft">
             <a className="text-gray-700 transition-colors duration-150 hover:text-primary-500">
               <FiGithub size={25} />
             </a>
