@@ -2,18 +2,18 @@ import { Service } from '@/types';
 
 export const services: Service[] = [
   {
-    name: 'Web Development',
-    description: 'Lorem ipsum dolor sit amet consectetuer adipiscing elit aenean commodo ligula eget.',
+    name: 'Real-Time 3D and Systems Programming',
+    description: 'I build high-performance, real-time software for games, simulation, and 3D applications using C++/C#.',
     image: '/images/services/web-development.png',
   },
   {
-    name: 'UI/UX Design',
-    description: 'Lorem ipsum dolor sit amet consectetuer adipiscing elit aenean commodo ligula eget.',
-    image: '/images/services/ui-ux.png',
+    name: 'Backend & Cloud Development',
+    description: 'I have a solid understanding of backend and cloud architecture, along with hands-on experience building for these systems.',
+    image: '/images/services/backend-development.png',
   },
   {
-    name: 'Mobile Application',
-    description: 'Lorem ipsum dolor sit amet consectetuer adipiscing elit aenean commodo ligula eget.',
-    image: '/images/services/mobile-app.png',
+    name: 'AI-Augmented Engineering',
+    description: 'I use AI tools and agents as a force multiplier, working faster and smarter while staying hands-on with the engineering that matters.',
+    image: '/images/services/ai-augmented.png',
   },
 ];
